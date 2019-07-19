@@ -3,7 +3,6 @@ GO:0020033,antigenic variation,0
 GO:0098609,cell-cell adhesion,1
 GO:0020035,"cytoadherence to microvasculature, mediated by symbiont protein",1
 GO:0020013,modulation by symbiont of host erythrocyte aggregation,1
-X,X,0
 GO:0042000,translocation of peptides or proteins into host,0
 GO:0050776,regulation of immune response,0
 GO:0030260,entry into host cell,0
