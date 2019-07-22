@@ -1,5 +1,7 @@
-./scripts/.ipynb_checkpoints
-./scripts/.ipynb_checkpoints/*
+scripts/.ipynb_checkpoints
+scripts/.ipynb_checkpoints/*
+data./ipynb_checkpoints
+data/.ipynb_checkpoint/*
 .vscode
 .vscode/*
 .ipynb_checkpoints/*
