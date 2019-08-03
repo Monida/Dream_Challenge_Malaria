@@ -1,33 +1,33 @@
-Isolate	Predicted_Categorical_Clearance
-isolate_02	Slow
-isolate_09	Slow
-isolate_10	Slow
-isolate_11	Fast
-isolate_12	Slow
-isolate_13	Fast
-isolate_14	Slow
-isolate_16	Fast
-isolate_18	Fast
-isolate_19	Slow
-isolate_20	Fast
-isolate_22	Fast
-isolate_23	Fast
-isolate_24	Slow
-isolate_27	Slow
-isolate_29	Slow
-isolate_30	Slow
-isolate_31	Fast
-isolate_32	Slow
-isolate_35	Fast
-isolate_38	Fast
-isolate_39	Slow
-isolate_40	Slow
-isolate_42	Slow
-isolate_43	Fast
-isolate_44	Fast
-isolate_46	Fast
-isolate_47	Fast
-isolate_50	Slow
-isolate_51	Slow
-isolate_53	Fast
-isolate_54	Fast
+Isolate	Predicted_Categorical_Clearance	Probability
+isolate_02	SLOW	0.5000727
+isolate_09	SLOW	0.5232053
+isolate_10	SLOW	0.66322285
+isolate_11	FAST	0.5445627868175507
+isolate_12	SLOW	0.6056564
+isolate_13	FAST	0.5909873247146606
+isolate_14	SLOW	0.58940405
+isolate_16	FAST	0.516569048166275
+isolate_18	FAST	0.5045180320739746
+isolate_19	SLOW	0.6098807
+isolate_20	FAST	0.548876017332077
+isolate_22	FAST	0.5588774979114532
+isolate_23	FAST	0.5524733364582062
+isolate_24	SLOW	0.6440416
+isolate_27	SLOW	0.66264796
+isolate_29	SLOW	0.54028356
+isolate_30	SLOW	0.5332735
+isolate_31	FAST	0.522303968667984
+isolate_32	SLOW	0.5026949
+isolate_35	FAST	0.5760004222393036
+isolate_38	FAST	0.6065578460693359
+isolate_39	SLOW	0.5267844
+isolate_40	SLOW	0.5904451
+isolate_42	SLOW	0.6310496
+isolate_43	FAST	0.5210067927837372
+isolate_44	FAST	0.5677330791950226
+isolate_46	FAST	0.5666743218898773
+isolate_47	FAST	0.5784318149089813
+isolate_50	SLOW	0.5786056
+isolate_51	SLOW	0.52595025
+isolate_53	FAST	0.5142737030982971
+isolate_54	FAST	0.5748144686222076
