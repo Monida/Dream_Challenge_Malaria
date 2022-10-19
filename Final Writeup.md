@@ -10,7 +10,7 @@ In summary these are the steps that were taken:
 4. Train final model with all the isolates and the selected genes.
    
 ## Find important genes
-After reviewing the literature suggested for the SubChallenge1, we manually listed the biological processes that have been found to be resistant to artemisinin. Later, we match these processes to the columns **Go Process ID** and **Go Process Desc** of the **PFalciparum_Gene_GOterms** (from now on PF_genes data frame) and created the **GO** data frame to which we manually added a column specifying with 1 that the process is "important" for artemisinin resistance and with 0 that it is "not important".
+After reviewing the literature suggested for the SubChallenge1, we manually listed the biological processes that have been found to be resistant to artemisinin. Later, we matched these processes to the columns **Go Process ID** and **Go Process Desc** of the **PFalciparum_Gene_GOterms** (from now on PF_genes data frame) and created the **GO** data frame to which we manually added a column specifying with 1 that the process is "important" for artemisinin resistance and with 0 that it is "not important".
 
 From the **PF_genes** dataframe, we extracted the genes that are related to each GO Process that appear in the **GO** dataframe and added them as a new column Gene_ID. We also added the column Gene_Count, which is the Gene_ID count.
 
@@ -22,7 +22,7 @@ Finally, the all the genes that appeared in all the filtered GO processes were c
 
 The **train** dataframe was filtered by leaving only the columns of genes that made it to the important genes.
 
-The next step was to "flatten" the **train** data frame. To do that we first grouped the **train** dataframe by Isolate, Timepoint and Treatment and calculated the mean of the different bioreplicate to form and aggregated dataframe:
+The next step was to "flatten" the **train** data frame. To do that we first grouped the **train** dataframe by Isolate, Timepoint and Treatment and calculated the mean of the different bioreplicates to form an aggregated dataframe:
 
 ```python
 aggregated_means_train = train.groupby(["Isolate","Timepoint","Treatment"]).mean()
@@ -72,7 +72,7 @@ After reading the paper from [Jinyu Chen and Louxin Zhang](https://www.biorxiv.o
 
 To find the genes that improved the model's score the model was trained multiple times, following these steps:
 
-1. The first time, the model was trained with only one gen at a time and then the gene that yielded the best score was selected.
+1. The first time, the model was trained with only one gene at a time and then the gene that yielded the best score was selected.
 
 2. The second time, the model was trained with a pair of genes at a time. The pair of genes consisted on the gene found in the previous round plus another gene from the list that was left.
 
@@ -124,9 +124,9 @@ We were able to find 10 acceptable XGBoost models after 316 iterations of our lo
 
 Below we outline the procedure we used to make final predictions for each isolate on the test dataset:
 
-1. For a given isolate in the test set, we extract the expression values of the top 100 genes across all of its variants (that is, Biological replicates, treatments and timepoints). 
-2. Using one XGBoost model at a time, we compute the inference score (probability of having "SLOW" clearance rate and thus artemisinin resistant) for each of the isolate variants. If the maximum inference score across all variants is > 0.5, then the isolate is labeled as "SLOW", or "FAST" otherwise.
-3. Once we have labeled the same isolate by the ten XGBoost models, we assign the most frequent (or voted) label to the isolate. The final probability assigned to the isolate is the maximum of the scores given by the XGBoost models that voted on the selected label.
+1. For a given isolate in the test set, we extracted the expression values of the top 100 genes across all of its variants (that is, Biological replicates, treatments and timepoints). 
+2. Using one XGBoost model at a time, we computed the inference score (probability of having "SLOW" clearance rate and thus artemisinin resistant) for each of the isolate variants. If the maximum inference score across all variants is > 0.5, then the isolate is labeled as "SLOW", or "FAST" otherwise.
+3. Once we have labeled the same isolate by the ten XGBoost models, we assigned the most frequent (or voted) label to the isolate. The final probability assigned to the isolate is the maximum of the scores given by the XGBoost models that voted on the selected label.
 
 
 All the associated code and model binaries can be found in our Project Files section (folders syn20684656,syn20684638, respectively).
